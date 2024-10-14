@@ -22,7 +22,7 @@ class PrototypesController < ApplicationController
 
   def show
     @comment = Comment.new()
-    @comments = Comment.includes(:prototype, :user)
+    @comments = @prototype.comments.includes(:user)
   end
 
   def edit
